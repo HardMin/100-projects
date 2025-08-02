@@ -1,6 +1,9 @@
 # Proyectos de Desarrollo Web
 
-Inspirado de [ErDekas/100-Proyectos-JS](https://github.com/ErDekas/100-Proyectos-JS?tab=readme-ov-file#proyectos-de-desarrollo-web)
+Inspirado de [ErDekas/100-Proyectos-JS](https://github.com/ErDekas/100-Proyectos-JS?tab=readme-ov-file#proyectos-de-desarrollo-web),
+va a ser desarrollado utilizando [ReactJS](https://react.dev/)
+
+Proximamente sera desarrollado con Astro, Vuejs y Angular.
 
 ## Nivel Básico
 
