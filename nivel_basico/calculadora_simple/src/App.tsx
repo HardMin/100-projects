@@ -23,6 +23,7 @@ export const App = () => {
   };
 
   const handleScreen = (value: string) => {
+    if (screen === "" && operator.includes(value)) return;
     if (operator.includes(value) && operator.includes(screen.slice(-1))) {
       let changeOperator = screen.slice(0, -1);
       changeOperator = changeOperator + value;
@@ -70,12 +71,14 @@ export const App = () => {
             className={`w-full h-full text-right text-[2em] p-2 focus:border-0 focus:outline-0 `}
             onChange={(e) => handleInput(e.target.value)}
             value={screen}
+            placeholder="0"
           />
           <input
             type="text"
             className={`w-full h-full text-right text-[2em] p-2 focus:border-0 focus:outline-0 text-zinc-500`}
             onChange={(e) => handleInput(e.target.value)}
             value={results}
+            placeholder="0"
           />
           <small>{error}</small>
         </section>
