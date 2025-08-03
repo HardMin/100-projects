@@ -23,6 +23,13 @@ export const App = () => {
   };
 
   const handleScreen = (value: string) => {
+    if (operator.includes(value) && operator.includes(screen.slice(-1))) {
+      let changeOperator = screen.slice(0, -1);
+      changeOperator = changeOperator + value;
+      setScreen(changeOperator);
+      return;
+    }
+
     const valueScreen = screen + value;
     setScreen(valueScreen);
     calcOperation(valueScreen);
@@ -32,7 +39,7 @@ export const App = () => {
     try {
       const operation = eval(value);
       setResults(operation);
-    } catch (_) {
+    } catch {
       setResults("");
     }
   };
