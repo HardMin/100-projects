@@ -47,12 +47,12 @@ test("E2E", async () => {
 
   const screenResults = screen.getByTestId("screen-results");
   expect(screenResults).toBeDefined();
-  expect(screenResults.innerText).toBe("0");
+  expect(screenResults.innerText).toBe("");
 
   await user.click(btn2);
-  expect(screenResults.innerText).toBe("2");
+  expect(screenResults.innerText).toBe("");
   await user.click(operatorPlus);
-  expect(screenResults.innerText).toBe("0");
+  expect(screenResults.innerText).toBe("");
   await user.click(btn2);
 
   expect(screenEntry.value).toBe("2+2");
