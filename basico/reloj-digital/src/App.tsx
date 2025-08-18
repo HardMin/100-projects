@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Clock } from "./components/Clock";
+
+export type dateTimeType = {
+  hour: string;
+  minute: string;
+  second: string;
+  type: string;
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [dateTime, setDateTime] = useState<dateTimeType>({
+    hour: "",
+    minute: "",
+    second: "",
+    type: "",
+  });
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const getTimeObject = (): dateTimeType => {
+    const time = new Date().toLocaleTimeString();
+    const getPos = time.indexOf(" ");
+    const [hours, type] = [
+      time.slice(0, getPos),
+      time.slice(getPos).replaceAll(" +", ""),
+    ];
+
+    const [hour, minute, second] = hours.split(":");
+
+    return {
+      hour,
+      minute,
+      second,
+      type,
+    };
+  };
+
+  const getTime = () => {
+    setInterval(() => {
+      setDateTime(getTimeObject);
+    }, 1000);
+  };
+
+  useEffect(getTime, []);
+
+  return <Clock dateTime={dateTime} />;
 }
 
-export default App
+export default App;
