@@ -4,9 +4,9 @@ Inspirado de [ErDekas/100-Proyectos-JS](https://github.com/ErDekas/100-Proyectos
 
 ## Nivel Básico
 
-- Calculadora Simple
-- Reloj Digital
-  <!-- - Lista de Tareas -->
+- [Calculadora Simple](https://github.com/HardMin/100-projects/tree/100-projects-react/basico/calculadora_simple)
+- [Reloj Digital](https://github.com/HardMin/100-projects/tree/100-projects-react/basico/reloj-digital)
+- Lista de Tareas
   <!-- - Galería de Imágenes -->
   <!-- - Selector de Color RGB -->
   <!-- - Generador de Contraseñas -->
