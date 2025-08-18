@@ -1,12 +1,9 @@
-import type { dateTimeType } from "../App";
+import { useDateTime } from "../hooks/useDateTime";
 
-interface ClockProps {
-  dateTime: dateTimeType;
-}
-export const Clock = ({ dateTime }: ClockProps) => {
+export const Clock = () => {
+  const { dateTime } = useDateTime();
   const { hour, minute, second, type } = dateTime;
 
-  const typeFormat = type.includes("a") ? "AM" : "PM";
   return (
     <div className="time">
       <span className="hour">{hour}</span>
@@ -14,7 +11,7 @@ export const Clock = ({ dateTime }: ClockProps) => {
       <span className="minute">{minute}</span>
       <span className="pount-second pount">:</span>
       <span className="second">{second} </span>
-      <span className="type">{typeFormat}</span>
+      <span className="type">{type}</span>
     </div>
   );
 };
